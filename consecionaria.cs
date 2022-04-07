@@ -10,15 +10,20 @@ namespace Consensionaria
     {
         static void Main(string[] args)
         {
-            int lcr;
-            int lcm;
-            lcr = 300;
-            lcm = 200;
+            int lcr, lcm, lm, lm2, lm3;
+            lcr = 300; lcm = 200; lm = 0; lm2 = 0;
             Caminhao[] truck = new Caminhao[lcm];
             Carro[] car = new Carro[lcr];
+
             bool l;
             l = true;
 
+            for (lm3 = 0; lm3 < (lm + 1); lm3++) {
+                truck[lm3].placa = "";
+            }
+            for (lm3 = 0; lm3 < (lm2 + 1); lm3++){
+                car[lm3].apelido = "";
+            }
             while (l == true)
             {
                 string es;
@@ -27,77 +32,95 @@ namespace Consensionaria
                 switch (es)
                 {
                     case "1":
-                        c();
                         int lp;
-                        for (lp=0; lp<lcr ; lp++)
-                        {
-                            if (car[lp].apelido == "")
-                            {
-                                string d, ve;
-                                d = "digite ";
-                                ve = "carro";
-
-                                Console.WriteLine("\n\n***cadastrar carro***\n\n");
-                                Console.WriteLine(d+"o modelo do "+ve+":"); string m = Console.ReadLine();
-                                Console.WriteLine(d+ "o nome do fabricante do "+ve+":"); string f = Console.ReadLine();
-                                Console.WriteLine(d+ "a cor do "+ve+":"); string c = Console.ReadLine();
-                                Console.WriteLine(d+ "o ano de lançamento do "+ve+":"); int a = int.Parse(Console.ReadLine());
-                                Console.WriteLine(d+"o número de porta do "+ve+":");  int np = int.Parse(Console.ReadLine());
-                                Console.WriteLine(d+"a capacidade de mala do "+ve+"(não digite o kg):"); int cp = int.Parse(Console.ReadLine());
-                                Console.WriteLine("responda "+ve+" possui bagageiro:"); string r = Console.ReadLine();
-
-                                car[lp].modelo = m; car[lp].fabricante = f; car[lp].cor = c;
-                                car[lp].ano = a; car[lp].nporta = np; car[lp].cpmala = cp; car[lp].bag = r;
-                                break;
-                            } else {
-                                continue;
-                            }
-                        }
-                    break;
-
-                    case "2":
-                        int lp1;
-                        for (lp1 = 0; lp1 < lcm; lp1++)
+                        if (lm < 300)
                         {
                             c();
-                            if (truck[lp1].placa == "")
+                            for (lp = 0; lp < lcr; lp++)
                             {
-                                string d, ve;
-                                d = "digite ";
-                                ve = "caminhão";
+                                if (car[lp].apelido == "")
+                                {
+                                    string d, ve;
+                                    d = "digite ";
+                                    ve = "carro";
 
-                                Console.WriteLine("\n\n***cadastrar carro***\n\n");
-                                Console.WriteLine(d+"o modelo do "+ve+":"); string m = Console.ReadLine();
-                                Console.WriteLine(d+"o nome do fabricante do "+ve+":"); string f = Console.ReadLine();
-                                Console.WriteLine(d+"a cor do "+ve+":"); string c = Console.ReadLine();
-                                Console.WriteLine(d+"o ano de lançamento do "+ve+":"); int a = int.Parse(Console.ReadLine());
-                                Console.WriteLine(d+"o número de porta do "+ve+":"); int np = int.Parse(Console.ReadLine());
-                                Console.WriteLine(d+"o numero de eixos do "+ve+":"); int ne = int.Parse(Console.ReadLine());
-                                Console.WriteLine(d+"a peso maximo do "+ve+" aguenta(não digite o kg):"); int cp = int.Parse(Console.ReadLine());
-                                Console.WriteLine(d+"a placa do "+ve+":"); string r = Console.ReadLine();
+                                    Console.WriteLine("\n\n***cadastrar carro***\n\n");
+                                    Console.WriteLine(d + "o modelo do " + ve + ":"); string m = Console.ReadLine();
+                                    Console.WriteLine(d + "o nome do fabricante do " + ve + ":"); string f = Console.ReadLine();
+                                    Console.WriteLine(d + "a cor do " + ve + ":"); string c = Console.ReadLine();
+                                    Console.WriteLine(d + "o ano de lançamento do " + ve + ":"); int a = int.Parse(Console.ReadLine());
+                                    Console.WriteLine(d + "o número de porta do " + ve + ":"); int np = int.Parse(Console.ReadLine());
+                                    Console.WriteLine(d + "a capacidade de mala do " + ve + "(não digite o kg):"); int cp = int.Parse(Console.ReadLine());
+                                    Console.WriteLine("responda " + ve + " possui bagageiro:"); string r = Console.ReadLine();
 
-                                truck[lp1].modelo = m; truck[lp1].fabricante = f; truck[lp1].cor = c;
-                                truck[lp1].ano = a; truck[lp1].nporta = np; truck[lp1].neixo = ne; truck[lp1].pesom = cp; truck[lp1].placa = r;
-                                break;
-                            }
-                            else
-                            {
-                                continue;
+                                    car[lp].modelo = m; car[lp].fabricante = f; car[lp].cor = c;
+                                    car[lp].ano = a; car[lp].nporta = np; car[lp].cpmala = cp; car[lp].bag = r;
+                                    lm++;
+                                    break;
+                                }
+                                else
+                                {
+                                    continue;
+                                }
                             }
                         }
-                    break;
+                        else
+                        {
+                            c();
+                            Console.WriteLine("não ha vagas para cadastrar carro, recomendado remover outro");
+                        }
+                        break;
+
+                    case "2":
+                        if (lm2 < 200)
+                        {
+                            for (lp = 0; lp < lcm; lp++)
+                            {
+                                c();
+                                if (truck[lp].placa == null)
+                                {
+                                    string d, ve;
+                                    d = "digite ";
+                                    ve = "caminhão";
+
+                                    Console.WriteLine("\n\n***cadastrar carro***\n\n");
+                                    Console.WriteLine(d + "o modelo do " + ve + ":"); string m = Console.ReadLine();
+                                    Console.WriteLine(d + "o nome do fabricante do " + ve + ":"); string f = Console.ReadLine();
+                                    Console.WriteLine(d + "a cor do " + ve + ":"); string c = Console.ReadLine();
+                                    Console.WriteLine(d + "o ano de lançamento do " + ve + ":"); int a = int.Parse(Console.ReadLine());
+                                    Console.WriteLine(d + "o número de porta do " + ve + ":"); int np = int.Parse(Console.ReadLine());
+                                    Console.WriteLine(d + "o numero de eixos do " + ve + ":"); int ne = int.Parse(Console.ReadLine());
+                                    Console.WriteLine(d + "a peso maximo do " + ve + " aguenta(não digite o kg):"); int cp = int.Parse(Console.ReadLine());
+                                    Console.WriteLine(d + "a placa do " + ve + ":"); string r = Console.ReadLine();
+
+                                    truck[lp].modelo = m; truck[lp].fabricante = f; truck[lp].cor = c;
+                                    truck[lp].ano = a; truck[lp].nporta = np; truck[lp].neixo = ne; truck[lp].pesom = cp; truck[lp].placa = r;
+                                    lm2++;
+                                    break;
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            c();
+                            Console.WriteLine("não ha vagas para cadastrar caminhão, recomendado remover outro");
+                        }
+                        break;
 
                     case "3":
                         c();
                         string res;
                         Console.WriteLine("digite uma placa:");
                         res = Console.ReadLine();
-                        int lp2;
-                        for (lp2 = 0; lp2 < lcm; lp2++)
+                        for (lp = 0; lp < lcm; lp++)
                         {
-                            if (truck[lp2].placa == res)
+                            if (truck[lp].placa == res)
                             {
-                                Console.WriteLine("carro {0}\n{1}", (lp2+1), car[lp2].ToString());
+                                Console.WriteLine("carro {0}\n{1}", (lp + 1), car[lp].ToString());
                                 break;
                             }
                             else
@@ -108,28 +131,26 @@ namespace Consensionaria
                         }
                         Console.WriteLine("digite 0 para voltar para o menu");
                         res = Console.ReadLine();
-                        if(res="0")
+                        if (res == "0")
                         {
                             c();
-                            Main();
-                        }else{
-                            c();
-                            Console.WriteLine("se vai para ka do mesmo jeito :)");
-                            Main();
                         }
-                    break;
+                        else
+                        {
+                            c();
+                            Console.WriteLine("se vai para esse menu do mesmo jeito :)");
+                        }
+                        break;
 
                     case "4":
                         c();
-                        string res;
                         Console.WriteLine("digite um modelo:");
                         res = Console.ReadLine();
-                        int lp2;
-                        for (lp2 = 0; lp2 < lcm; lp2++)
+                        for (lp = 0; lp < lcm; lp++)
                         {
-                            if (truck[lp2].modelo == res)
+                            if (truck[lp].modelo == res)
                             {
-                                Console.WriteLine("carro {0}\n{1}", (lp2+1), car[lp2].ToString());
+                                Console.WriteLine("carro {0}\n{1}", (lp + 1), car[lp].ToString());
                                 break;
                             }
                             else
@@ -140,28 +161,26 @@ namespace Consensionaria
                         }
                         Console.WriteLine("digite 0 para voltar para o menu");
                         res = Console.ReadLine();
-                        if(res="0")
+                        if (res == "0")
                         {
                             c();
-                            Main();
-                        }else{
+                        }
+                        else
+                        {
                             c();
                             Console.WriteLine("se vai para o menu do mesmo jeito :)");
-                            Main();
                         }
-                    break;
+                        break;
 
                     case "5":
                         c();
-                        string res;
                         Console.WriteLine("digite um cor:");
                         res = Console.ReadLine();
-                        int lp2;
-                        for (lp2 = 0; lp2 < lcm; lp2++)
+                        for (lp = 0; lp < lcm; lp++)
                         {
-                            if (car[lp2].cor == res)
+                            if (car[lp].cor == res)
                             {
-                                Console.WriteLine("carro {0}\n{1}", (lp2+1), car[lp2].ToString());
+                                Console.WriteLine("carro {0}\n{1}", (lp + 1), car[lp].ToString());
                                 break;
                             }
                             else
@@ -172,69 +191,67 @@ namespace Consensionaria
                         }
                         Console.WriteLine("digite 0 para voltar para o menu");
                         res = Console.ReadLine();
-                        if(res="0")
+                        if (res == "0")
                         {
                             c();
-                            Main();
-                        }else{
-                            c();
-                            Console.WriteLine("se vai para ka do mesmo jeito :)");
-                            Main();
                         }
-                    break;
+                        else
+                        {
+                            c();
+                            Console.WriteLine("se vai para o menu do mesmo jeito :)");
+                        }
+                        break;
 
                     case "6":
-                        int lp;
-                        string res;
                         c();
-                        Console.WriteLine("\n\n***Cachorro***\n\n");
-                        for(lp=0;lp<lcr;lp++){
-                            Console.WriteLine("{0}-carro:\n{1}\n", (lp+1), car[lp].ToString());
+                        Console.WriteLine("\n\n***Carros***\n\n");
+                        for (lp = 0; lp < lcr; lp++)
+                        {
+                            Console.WriteLine("{0}-carro:\n{1}\n", (lp + 1), car[lp].ToString());
                         };
                         Console.WriteLine("digite 0 para voltar para o menu");
                         res = Console.ReadLine();
-                        if(res="0")
+                        if (res == "0")
                         {
                             c();
-                            Main();
-                        }else{
-                            c();
-                            Console.WriteLine("se vai para ka do mesmo jeito :)");
-                            Main();
                         }
-                    break;
+                        else
+                        {
+                            c();
+                            Console.WriteLine("se vai para o menu do mesmo jeito :)");
+                        }
+                        break;
 
                     case "7":
-                        int lp1;
-                        string res;
                         c();
                         Console.WriteLine("\n\n***Caminhão***\n\n");
-                        for(lp1=0;lp1<lcm;lp1++){
-                            Console.WriteLine("{0}-Caminhão:\n{1}", (lp1+1), truck[lp1].ToString());
+                        for (lp = 0; lp < lcm; lp++)
+                        {
+                            Console.WriteLine("{0}-Caminhão:\n{1}", (lp + 1), truck[lp].ToString());
                         };
                         Console.WriteLine("digite 0 para voltar para o menu");
                         res = Console.ReadLine();
-                        if(res="0")
+                        if (res == "0")
                         {
                             c();
-                            Main();
-                        }else{
-                            c();
-                            Console.WriteLine("se vai para ka do mesmo jeito :)");
-                            Main();
                         }
-                    break;
+                        else
+                        {
+                            c();
+                            Console.WriteLine("se vai para o menu do mesmo jeito :)");
+                        }
+                        break;
 
                     case "0":
 
                         ex();
-                    break;
+                        break;
 
                     default:
                         c();
                         Console.WriteLine("digite um valor válido");
                         l = true;
-                    break;
+                        break;
                 };
                 Console.ReadKey();
             }
@@ -254,11 +271,11 @@ namespace Consensionaria
 
             Console.WriteLine("\n\n***Menu Consensionaria***\n");
             Console.WriteLine("Digite:\n");
-            Console.WriteLine("1-"+p+"Cadastro de Carro\n2-"+p+"Cadastro de Caminhão\n3-"+p+"Consulta por placa\n4-"+p+"Consultar Caminhão por modelo/marca");
-            Console.WriteLine("5-"+p+"Consultar Carro por cor\n6-"+p+"Exibir todos os Carros cadastrados\n7-"+p+ "Exibir todos os Caminhões cadastrados\n0-" + p+"sair");
+            Console.WriteLine("1-" + p + "Cadastro de Carro\n2-" + p + "Cadastro de Caminhão\n3-" + p + "Consulta por placa\n4-" + p + "Consultar Caminhão por modelo/marca");
+            Console.WriteLine("5-" + p + "Consultar Carro por cor\n6-" + p + "Exibir todos os Carros cadastrados\n7-" + p + "Exibir todos os Caminhões cadastrados\n0-" + p + "sair");
         }
     }
-    abstract class Veiculo
+    public class Veiculo
     {
         public string modelo;
         public string fabricante;
@@ -312,21 +329,21 @@ namespace Consensionaria
             return string.Format("Modelo: {0}\nFabricante: {1}\nAno: {2}\nCor: {3}\nNúmero de portas: {4}\n", modelo, fabricante, ano, cor, nporta);
         }
     }
-    public class Carro:Veiculo
+    public class Carro : Veiculo
     {
         public int cpmala;
         public string apelido;
         public string bag;
 
         public Carro()
-            :base()
+            : base()
         {
             this.cpmala = 0;
             this.apelido = null;
             this.bag = null;
         }
         public Carro(string modelo, string fabricante, string cor, int ano, int nporta, int cpmala, string bag, string apelido)
-            :base(modelo, fabricante, cor, ano, nporta)
+            : base(modelo, fabricante, cor, ano, nporta)
         {
             this.cpmala = cpmala;
             this.apelido = apelido;
@@ -352,7 +369,7 @@ namespace Consensionaria
             return string.Format("{0}Capacidade do porta malas: {1} kg\nBagajeiro: {2}", base.ToString(), cpmala, bag, apelido);
         }
     }
-    public class Caminhao:Veiculo
+    public class Caminhao : Veiculo
     {
         public int neixo;
         public double pesom;
