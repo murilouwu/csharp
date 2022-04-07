@@ -77,7 +77,7 @@ namespace Consensionaria
                             for (lp = 0; lp < lcm; lp++)
                             {
                                 c();
-                                if (truck[lp].placa == null)
+                                if (truck[lp].placa == "")
                                 {
                                     string d, ve;
                                     d = "digite ";
