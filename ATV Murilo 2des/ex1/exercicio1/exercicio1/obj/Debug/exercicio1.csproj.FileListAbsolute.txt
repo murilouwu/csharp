@@ -1,0 +1,7 @@
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex1\exercicio1\exercicio1\bin\Debug\exercicio1.exe.config
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex1\exercicio1\exercicio1\bin\Debug\exercicio1.exe
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex1\exercicio1\exercicio1\bin\Debug\exercicio1.pdb
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex1\exercicio1\exercicio1\obj\Debug\exercicio1.csprojAssemblyReference.cache
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex1\exercicio1\exercicio1\obj\Debug\exercicio1.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex1\exercicio1\exercicio1\obj\Debug\exercicio1.exe
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex1\exercicio1\exercicio1\obj\Debug\exercicio1.pdb

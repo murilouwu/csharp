@@ -1,0 +1,6 @@
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex2\exercicio2\exercicio2\bin\Debug\exercicio2.exe.config
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex2\exercicio2\exercicio2\bin\Debug\exercicio2.exe
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex2\exercicio2\exercicio2\bin\Debug\exercicio2.pdb
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex2\exercicio2\exercicio2\obj\Debug\exercicio2.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex2\exercicio2\exercicio2\obj\Debug\exercicio2.exe
+C:\Users\Aluno\Desktop\ATV Murilo 2des\ex2\exercicio2\exercicio2\obj\Debug\exercicio2.pdb
